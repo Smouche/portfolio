@@ -1,0 +1,407 @@
+/* Custom styles */
+
+/* Colors */
+:root {
+    --color-primarytext: #ffffff;
+    --color-secondarytext: #B5D7FF;
+    --color-accenttext: #BD0828;
+    --color-background: #000000;
+}
+
+/* Typography */
+
+h3,
+h4,
+h5,
+h6,
+p {
+    opacity: 0.8;
+}
+
+h1 {
+    font-family: 'Inter';
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 128px;
+    letter-spacing: -5px;
+
+    color: var(--color-secondarytext);
+}
+
+h2 {
+    font-family: Georgia;
+    font-size: 112px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 72px;
+
+    color: var(--color-secondarytext);
+}
+
+h3 {
+    font-family: 'Inter';
+    font-size: 112px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 128px;
+    letter-spacing: -5px;
+
+    color: var(--color-primarytext);
+}
+
+h4 {
+    font-family: 'Inter';
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 128px;
+    letter-spacing: -5px;
+
+    color: var(--color-primarytext);
+}
+
+h5 {
+    font-family: 'Inter';
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 72px;
+    letter-spacing: -5px;
+
+    color: var(--color-primarytext);
+}
+
+h6 {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 3.6px;
+
+    color: var(--color-primarytext);
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: var(--color-primarytext);
+
+    margin-bottom: 32px;
+}
+
+a {
+    font-family: 'Inter';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 38px;
+    letter-spacing: -2px;
+
+    color: var(--color-accenttext);
+}
+
+ul {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 26px;
+    opacity: 0.6;
+
+    color: var(--color-accenttext);
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+li:not(:last-child)::after {
+    content: " /";
+    margin-right: 8px;
+}
+
+/* Overall */
+
+body {
+    background: var(--color-background);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    body * {
+        cursor: none !important;
+    }
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+    transition: opacity 120ms ease;
+}
+
+.custom-cursor.is-visible {
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    padding-left: 96px;
+    padding-right: 96px;
+    margin: 0 auto;
+}
+
+.background1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 900ms ease;
+}
+
+body.is-loaded .background1 {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background1 {
+        opacity: 1;
+        transition: none;
+    }
+}
+
+.radialGradientTop {
+    position: relative;
+    top: -200px;
+    width: 100%;
+}
+
+.radialGradientBottom {
+    position: relative;
+    top: -405px;
+    transform: scaleY(-1);
+    width: 100%;
+}
+
+.fadeGradient {
+    position: relative;
+    top: -1105px;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--color-background) 100%);
+    z-index: 0;
+}
+
+/* Hero */
+
+.hero {
+    height: 100vh;
+    padding-top: 96px;
+    min-height: 700px;
+}
+
+.hero p {
+    width: 418px;
+    margin-top: 16px;
+}
+
+.hero h6 {
+    margin-bottom: 32px;
+}
+
+.heroTitle h3 {
+    color: var(--color-accenttext);
+    position: relative;
+    top: -32px;
+    z-index: 5;
+    opacity: 1;
+    letter-spacing: -7px;
+}
+
+.heroTitle h2 {
+    position: relative;
+    left: -64px;
+    z-index: 10;
+}
+
+/* Introduction */
+
+.intro {
+    height: 100vh;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    display: flex;
+    flex-direction: row;
+    min-height: 700px;
+}
+
+.intro .leftIntro {
+    width: 50%;
+    padding-right: 96px;
+    box-sizing: border-box;
+}
+
+.intro .rightIntro {
+    padding-left: 96px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.imgIntroBox {
+    width: fit-content;
+    height: 700px;
+    overflow: hidden;
+}
+
+.imgIntroContent {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+
+.intro h2 {
+    position: relative;
+    top: -40px;
+    left: -252px;
+    z-index: 10;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.intro .noMargin {
+    margin: 0;
+}
+
+/* Projects */
+
+.projects {
+    height: 100vh;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    min-height: 700px;
+}
+
+.projectItems {
+    display: flex;
+    gap: 64px;
+}
+
+.projectItem {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.projectItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: var(--color-secondarytext);
+    opacity: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.projectImg {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+}
+
+.projectItem:hover::before {
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+.projectItem:hover .projectImg {
+    transform: skewX(-6deg) translateX(6px);
+    cursor: crosshair;
+}
+
+/* archive */
+
+.archive {
+    padding-bottom: 96px;
+}
+
+.archiveRows {
+    display: flex;
+    gap: 96px;
+}
+
+.archiveRow {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.archiveItem {
+    width: 100%;
+}
+
+.archive img {
+    width: 100%;
+    object-position: center;
+}
+
+/* projects */
+
+.projectHero {
+    position: relative;
+    overflow: visible;
+    height: 100vh;
+    width: 100%;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    min-height: 700px;
+}
+
+.projectHero>* {
+    position: relative;
+    z-index: 1;
+}
+
+.projectHeroImg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    object-fit: cover;
+    object-position: center;
+}
