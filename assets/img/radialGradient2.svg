@@ -1,0 +1,37 @@
+<svg width="1440" height="1383" viewBox="0 0 1440 1383" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_206_97)">
+<rect width="1440" height="1383" fill="white"/>
+<g filter="url(#filter0_n_206_97)">
+<g clip-path="url(#paint0_angular_206_97_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0.000258616 0.649927 -0.626002 0.288352 217 828.541)"><foreignObject x="-1955.43" y="-1955.43" width="3910.87" height="3910.87"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(0, 0, 0, 1) 0deg,rgba(98, 0, 13, 1) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><rect width="1440" height="1383" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.0,&#34;g&#34;:0.0,&#34;b&#34;:0.0,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.38431373238563538,&#34;g&#34;:0.0,&#34;b&#34;:0.050980392843484879,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.0,&#34;g&#34;:0.0,&#34;b&#34;:0.0,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.38431373238563538,&#34;g&#34;:0.0,&#34;b&#34;:0.050980392843484879,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:0.51723235845565796,&#34;m01&#34;:-1252.0042724609375,&#34;m02&#34;:842.74359130859375,&#34;m10&#34;:1299.8541259765625,&#34;m11&#34;:576.70452880859375,&#34;m12&#34;:-109.73848724365234},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+<rect width="1440" height="612" fill="url(#paint1_linear_206_97)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_n_206_97" x="0" y="0" width="1440" height="1383" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.90909087657928467 0.90909087657928467" stitchTiles="stitch" numOctaves="3" result="noise" seed="8711" />
+<feComponentTransfer in="noise" result="coloredNoise1">
+<feFuncR type="linear" slope="2" intercept="-0.5" />
+<feFuncG type="linear" slope="2" intercept="-0.5" />
+<feFuncB type="linear" slope="2" intercept="-0.5" />
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feComponentTransfer in="noise1Clipped" result="color1">
+<feFuncA type="table" tableValues="0 0.1" />
+</feComponentTransfer>
+<feMerge result="effect1_noise_206_97">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="paint0_angular_206_97_clip_path"><rect width="1440" height="1383"/></clipPath><linearGradient id="paint1_linear_206_97" x1="720" y1="0" x2="720" y2="612" gradientUnits="userSpaceOnUse">
+<stop offset="0.0625"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_206_97">
+<rect width="1440" height="1383" fill="white"/>
+</clipPath>
+</defs>
+</svg>
