@@ -67,7 +67,7 @@ h5 {
     font-style: normal;
     font-weight: 900;
     line-height: 72px;
-    letter-spacing: -5px;
+    letter-spacing: -4px;
 
     color: var(--color-primarytext);
 }
@@ -89,13 +89,18 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: 26px;
+    opacity: 0.7;
 
     color: var(--color-primarytext);
 
     margin-bottom: 32px;
 }
 
-a {
+span {
+    font-weight: 900;
+}
+
+.contactLinks a {
     font-family: 'Inter';
     font-size: 40px;
     font-style: normal;
@@ -112,24 +117,40 @@ ul {
     font-style: normal;
     font-weight: 900;
     line-height: 26px;
-    opacity: 0.6;
+    opacity: 0.7;
 
-    color: var(--color-accenttext);
+    color: var(--color-primarytext);
 
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 32px;
 }
 
+.ulWhite {
+
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.ulWhite li:not(:last-child)::after {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 li:not(:last-child)::after {
     content: " /";
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
 /* Overall */
 
 body {
+    position: relative;
     background: var(--color-background);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -169,9 +190,92 @@ main {
     margin: 0 auto;
 }
 
+
+/* nav */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    z-index: 30;
+    background-color: transparent;
+    transition: background-color 300ms ease;
+}
+
+nav.scrolled {
+    background-color: var(--color-background);
+}
+
+nav p,
+nav ul {
+    margin: 0;
+}
+
+nav .homeLink {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    opacity: 0.7;
+    color: var(--color-primarytext);
+    text-decoration: none;
+    letter-spacing: 0;
+    display: inline-block;
+    transform-origin: left center;
+    transform: skewX(0deg);
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease;
+}
+
+nav .homeLink:hover {
+    transform: skewX(-20deg);
+    opacity: 1;
+}
+
+nav .ulWhite a {
+    font: inherit;
+    font-style: normal;
+    line-height: inherit;
+    letter-spacing: 0;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 400;
+    display: inline-block;
+    transform-origin: left center;
+    transform: skewX(0deg);
+    transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), font-weight 150ms ease, opacity 200ms ease;
+}
+
+nav .ulWhite a:hover {
+    transform: skewX(-20deg);
+    opacity: 1;
+}
+
+nav .ulWhite a.active {
+    font-weight: 900;
+}
+
+#top,
+#projects,
+#about,
+#archive,
+#contact {
+    scroll-margin-top: 32px;
+}
+
+/* red background */
+
 .background1 {
     position: absolute;
-    top: 0;
+    top: -50px;
     left: 0;
     width: 100%;
     z-index: -10;
@@ -185,6 +289,11 @@ body.is-loaded .background1 {
 
 @media (prefers-reduced-motion: reduce) {
     .background1 {
+        opacity: 1;
+        transition: none;
+    }
+
+    .background2 {
         opacity: 1;
         transition: none;
     }
@@ -213,11 +322,36 @@ body.is-loaded .background1 {
     z-index: 0;
 }
 
+.radialGradientContact {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    display: block;
+}
+
+.background2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 900ms ease;
+    pointer-events: none;
+}
+
+body.is-loaded .background2 {
+    opacity: 1;
+}
+
 /* Hero */
 
 .hero {
+    box-sizing: border-box;
     height: 100vh;
-    padding-top: 96px;
+    padding-top: 128px;
     min-height: 700px;
 }
 
@@ -248,6 +382,7 @@ body.is-loaded .background1 {
 /* Introduction */
 
 .intro {
+    box-sizing: border-box;
     height: 100vh;
     padding-top: 96px;
     padding-bottom: 96px;
@@ -298,6 +433,7 @@ body.is-loaded .background1 {
 /* Projects */
 
 .projects {
+    box-sizing: border-box;
     height: 100vh;
     padding-top: 96px;
     padding-bottom: 96px;
@@ -354,7 +490,9 @@ body.is-loaded .background1 {
 /* archive */
 
 .archive {
+    box-sizing: border-box;
     padding-bottom: 96px;
+    padding-top: 96px;
 }
 
 .archiveRows {
@@ -370,20 +508,134 @@ body.is-loaded .background1 {
 
 .archiveItem {
     width: 100%;
+    position: relative;
+}
+
+.archiveItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-secondarytext);
+    opacity: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .archive img {
+    position: relative;
+    z-index: 1;
+    display: block;
     width: 100%;
     object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.archiveItem:hover::before {
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+.archiveItem:hover img {
+    transform: skewX(-6deg) translateX(6px);
+    cursor: crosshair;
+}
+
+.archiveModal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: rgba(0, 0, 0, 0.82);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.archiveModal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.archiveModalImage {
+    max-width: min(1100px, calc(100vw - 64px));
+    max-height: calc(100vh - 64px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 14px 48px rgba(0, 0, 0, 0.45);
+}
+
+.archiveModalClose {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: 0;
+    background: transparent;
+    color: var(--color-primarytext);
+    font-family: 'Inter';
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.archiveModalClose:hover {
+    opacity: 1;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* contact */
+
+.contact {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 160px;
+    padding-left: 224px;
+    min-height: 700px;
+}
+
+.contact h2 {
+    position: relative;
+    top: -35px;
+    left: -60px;
+    z-index: 10;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.contact p {
+    width: 512px;
+    margin-top: 16px;
+}
+
+.contactLinks {
+    display: flex;
+    gap: 4px;
+    margin-top: 64px;
+    flex-direction: column;
+}
+
+.contact ul {
+    margin-top: 64px;
 }
 
 /* projects */
 
 .projectHero {
+    box-sizing: border-box;
     position: relative;
-    overflow: visible;
     height: 100vh;
-    width: 100%;
     padding-top: 96px;
     padding-bottom: 96px;
     min-height: 700px;
@@ -399,9 +651,300 @@ body.is-loaded .background1 {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     z-index: 0;
     object-fit: cover;
     object-position: center;
+    min-height: 700px;
 }
+
+.projectHero h1 {
+    color: var(--color-primarytext);
+    position: relative;
+    top: -32px;
+    z-index: 5;
+    opacity: 1;
+    letter-spacing: -7px;
+}
+
+.projectHero p {
+    width: 512px;
+    margin-top: 16px;
+    z-index: 5;
+}
+
+.projectHeroInfo p {
+    width: auto;
+}
+
+.projectHeroInfo {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    z-index: 5;
+}
+
+.projectHero .imageGradient {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, var(--color-background) 100%);
+    z-index: 1;
+    min-height: 700px;
+}
+
+/* project problem */
+
+.projectProblem {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 128px;
+    padding-bottom: 96px;
+    min-height: 700px;
+}
+
+.projectProblemText {
+    width: 512px;
+}
+
+.projectProblemText p {
+    margin-top: 16px;
+}
+
+.projectProblemImg {
+    margin-top: 100vh;
+    position: absolute;
+    right: 0;
+}
+
+.projectProblemImg img {
+    height: 100vh;
+}
+
+.projectProblemImg .imageGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, var(--color-background) 100%);
+    z-index: 2;
+}
+
+/* project quote */
+
+.projectQuote {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 128px;
+    padding-bottom: 96px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectQuote h2 {
+    width: 640px;
+    font-size: 24px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 39px;
+}
+
+/* project field research */
+
+.projectFieldResearch {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 128px;
+    padding-bottom: 96px;
+    min-height: 700px;
+}
+
+.projectFieldResearch .content {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.projectFieldResearch p {
+    margin-bottom: 16px;
+}
+
+.projectFieldResearch .content .left,
+.projectFieldResearch .content .right {
+    width: 100%;
+}
+
+.projectFieldResearch .content img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* project insights */
+
+.projectInsights {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 128px;
+    padding-bottom: 96px;
+    min-height: 700px;
+    display: flex;
+    gap: 64px;
+}
+
+.projectInsights .left {
+    width: 512px;
+}
+
+.projectInsights .insightCard {
+    width: 384px;
+    height: 35%;
+    border: 1px solid var(--color-primarytext);
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.insightCard p {
+    width: 224px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.projectInsights .insightCard h2 {
+    position: absolute;
+    margin: 0;
+    font-size: 32px;
+}
+
+.projectInsights .insightCard2 h2 {
+    top: 10px;
+    right: -170px;
+}
+
+.projectInsights .insightCard3 h2 {
+    top: 40px;
+    right: -100px;
+}
+
+.insightCard1 {
+    z-index: 3;
+}
+
+.insightCard2 {
+    margin-left: 96px;
+    margin-top: -32px;
+    z-index: 4;
+}
+
+.insightCard3 {
+    margin-left: 32px;
+    margin-top: -32px;
+    z-index: 3;
+}
+
+/* project sketches */
+
+.projectSketches {
+    box-sizing: border-box;
+    height: 360vh;
+}
+
+.projectSketchesScene {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.projectSketches h2 {
+    width: 640px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 39px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sketchImages {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sketchImage {
+    position: absolute;
+    transform: translateY(120vh);
+    will-change: transform;
+}
+
+.sketchImage:nth-child(1) {
+    left: 6%;
+    top: 10%;
+}
+
+.sketchImage:nth-child(2) {
+    left: 28%;
+    top: 32%;
+}
+
+.sketchImage:nth-child(3) {
+    left: 69%;
+    top: 8%;
+}
+
+.sketchImage:nth-child(4) {
+    left: 3%;
+    top: 42%;
+}
+
+.sketchImage:nth-child(5) {
+    left: 73%;
+    top: 38%;
+}
+
+.sketchImage:nth-child(6) {
+    left: 18%;
+    top: 67%;
+}
+
+.sketchImage:nth-child(7) {
+    left: 53%;
+    top: 70%;
+}
+
+.sketchImage:nth-child(8) {
+    left: 10%;
+    top: 80%;
+}
+
+@media (max-width: 900px) {
+    .projectSketches {
+        height: 320vh;
+    }
+
+    .projectSketches h2 {
+        width: min(88vw, 640px);
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+
+}
+
