@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Portfolio of Ilja Triantafyllidis, showcasing UX, visual design, and interactive projects.">
+    <title>Ilja Triantafyllidis Portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -16,12 +17,12 @@
 </head>
 
 <body>
-    <nav>
-        <div class="navLeft">
+    <nav class="siteNav" aria-label="Primary navigation">
+        <div class="siteNavBrand navLeft">
             <a href="index.html#top" class="homeLink">★ Ilja Triantafyllidis</a>
         </div>
-        <div class="right">
-            <ul class="ulWhite">
+        <div class="siteNavLinks">
+            <ul class="siteNavList ulWhite">
                 <li><a href="index.html#about">About Me</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="index.html#archive">Archive</a></li>
@@ -30,57 +31,55 @@
         </div>
     </nav>
 
-    <div class="background">
-        <div class="background1">
+    <div class="siteBackground background" aria-hidden="true">
+        <div class="siteBackgroundLayer background1">
             <img src="assets/img/radialGradient.svg" alt="background gradient" class="radialGradientTop">
             <img src="assets/img/radialGradient.svg" alt="background gradient" class="radialGradientBottom">
-            <div class="fadeGradient"></div>
+            <div class="siteBackgroundFade fadeGradient"></div>
         </div>
     </div>
 
-    <main id="top">
+    <main id="top" class="siteMain">
 
-        <div class="hero">
-            <h6>PORTFOLIO 2026</h6>
+        <section class="hero frame" aria-label="Introduction">
             <div class="heroTitle">
                 <h1>ILJA</h1>
                 <h2>TRIANTAFYLLIDIS</h2>
-                <H3>DESIGNER</H3>
+                <h3>DESIGNER</h3>
             </div>
-            <p>Education<br>★ Applied Visual Arts — 6 years<br>★ Communication & Multimedia Design — 2 years
+            <p>Concept-driven design across digital, visual, and interactive work.<br><br>
+                Education<br>* Communication & Multimedia Design — 2 years<br>* Applied Visual Arts — 6 years
             </p>
-        </div>
+        </section>
 
-        <div class="intro" id="about">
-            <div class="leftIntro">
-                <div class="imgIntroBox">
-                    <img src="assets/img/port1.jpg" alt="ilja" class="imgIntroContent" id="portraitImg">
-                </div>
+        <section class="intro frame" id="about" aria-label="About">
+            <div class="introMedia leftIntro">
+                <figure class="imgIntroBox">
+                    <img src="assets/img/port1.jpg" alt="ilja" class="imgIntroContent">
+                </figure>
             </div>
-            <div class="rightIntro">
+            <div class="introContent rightIntro">
                 <h4>WHO IS</h4>
                 <h2> THIS GUY?</h2>
-                <p>Born in the wrong era, raised by the internet, shaped by design blogs at 2am. I'm the kid who spent
-                    lunch breaks in the computer lab learning Photoshop instead of socializing.</p>
-                <p>_ No design without story<br>
-                    _ My team inspires me<br>
-                    _ The concept is the design<br>
-                    _ Harsh critique improves my skills<br>
-                    _ Now I make things that</p>
-                <p class="noMargin">Working with:</p>
-                <ul>
-                    <li>ADOBE SUITE</li>
-                    <li>FIGMA</li>
-                    <li>BLENDER</li>
-                </ul>
+                <p>Hey! I'm Ilja, a Communication & Multimedia Design student from Belgium.
+                    I create visual work based on concept, stories and research.
+                    After many group and client based projects, I'm looking for a creative studio internship
+                    to help improve
+                    my skills.</p>
+                <p>* Branding & Visual Identity<br>
+                    * Typography & Layout<br>
+                    * UX/UI Design<br>
+                    * Concept Development<br>
+                    * 3D Modeling & Animation</p>
+                <p class="noMargin">Working with: Adobe Suite, Figma, Blender</p>
             </div>
-        </div>
+        </section>
 
-        <div class="projects" id="projects">
+        <section class="projects" id="projects" aria-label="Projects">
             <h6>SELECTED WORK</h6>
             <h3>PROJECTS</h3>
             <div class="projectItems">
-                <div class="projectItem">
+                <article class="projectItem">
                     <a href="theUnexpectedMatch.html">
                         <img src="assets/img/theUnexpectedMatch.png" alt="the unexpected match" class="projectImg">
                     </a>
@@ -90,8 +89,8 @@
                         <li>UX</li>
                         <li>VISUAL DESIGN</li>
                     </ul>
-                </div>
-                <div class="projectItem">
+                </article>
+                <article class="projectItem">
                     <a href="codeCompass.html">
                         <img src="assets/img/codeCompass.png" alt="code compass" class="projectImg">
                     </a>
@@ -101,9 +100,9 @@
                         <li>UX</li>
                         <li>VISUAL DESIGN</li>
                     </ul>
-                </div>
-                <div class="projectItem">
-                    <a href="onderHetStof.html">
+                </article>
+                <article class="projectItem">
+                    <a href="underTheDust.html">
                         <img src="assets/img/onderHetStof.png" alt="onder het stof" class="projectImg">
                     </a>
                     <p>A scrollytelling experience about local mining history, turning archival information into an
@@ -112,15 +111,15 @@
                         <li>UX</li>
                         <li>VISUAL DESIGN</li>
                     </ul>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="archive" id="archive">
+        <section class="archive" id="archive" aria-label="Archive">
             <h6>SELECTED WORK</h6>
             <h3>ARCHIVE</h3>
-            <div class="archiveRows">
-                <div class="archiveRow">
+            <div class="archiveGrid archiveRows">
+                <div class="archiveColumn archiveRow">
                     <div class="archiveItem">
                         <img src="assets/img/illustration3.png" alt="Archive illustration 1">
                     </div>
@@ -131,7 +130,7 @@
                         <img src="assets/img/illustration4.png" alt="Archive illustration 3">
                     </div>
                 </div>
-                <div class="archiveRow">
+                <div class="archiveColumn archiveRow">
                     <div class="archiveItem">
                         <img src="assets/img/illustration3.png" alt="Archive illustration 4">
                     </div>
@@ -142,7 +141,7 @@
                         <img src="assets/img/illustration4.png" alt="Archive illustration 6">
                     </div>
                 </div>
-                <div class="archiveRow">
+                <div class="archiveColumn archiveRow">
                     <div class="archiveItem">
                         <img src="assets/img/illustration3.png" alt="Archive illustration 7">
                     </div>
@@ -154,29 +153,28 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="archiveModal" id="archiveModal" aria-hidden="true">
+        <aside class="archiveModal" id="archiveModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Archive image viewer">
             <button type="button" class="archiveModalClose" id="archiveModalClose"
                 aria-label="Close image popup">×</button>
             <img src="" alt="" class="archiveModalImage" id="archiveModalImage">
-        </div>
+        </aside>
 
-        <div class="contact" id="contact">
+        <section class="contact frame" id="contact" aria-label="Contact">
             <h3>LET'S</h3>
             <h2>COLLABORATE?</h2>
-            <p>Looking for an intern who brings fresh perspective, obsessive attention to detail, and makes a mean cold
-                brew? Let's talk.</p>
+            <!-- <p>Do you like what you see? L</p> -->
             <div class="contactLinks">
-                <a>EMAIL ME →</a>
-                <a>DOWNLOAD RESUME →</a>
+                <a href="mailto:hello@example.com">EMAIL ME →</a>
+                <a href="#" aria-disabled="true">DOWNLOAD RESUME →</a>
             </div>
-            <ul class="ulWhite">
-                <li><a>Mobile</a></li>
-                <li><a>Instagram</a></li>
-                <li><a>LinkedIn</a></li>
+            <ul class="contactMeta ulWhite">
+                <li><a href="#" aria-disabled="true">Mobile</a></li>
+                <li><a href="#" aria-disabled="true">Instagram</a></li>
+                <li><a href="#" aria-disabled="true">LinkedIn</a></li>
             </ul>
-        </div>
+        </section>
 
     </main>
 
